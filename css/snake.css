@@ -1,0 +1,75 @@
+body
+{
+    background-color: #999;
+}
+
+.wrapper
+{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#game-screen
+{
+    margin: 0 auto;
+    display: block;
+}
+
+.score-block
+{
+    width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    font-family: Verdana, sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+    display: none;
+}
+
+input
+{
+    font-family: Verdana, sans-serif;
+    font-size: 24px;
+}
+
+.results
+{
+    font-family: Verdana, sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+    margin: 20px auto;
+    width: 300px;
+}
+
+.odd
+{
+    display: block;
+    background-color: darkred;
+    border: 1px solid #000;
+}
+
+.even
+{
+    border: 1px solid #000;
+    display: block;
+    background-color: blueviolet;
+    margin-bottom: 10px;
+}
+
+#game-submit
+{
+    cursor: pointer;
+    display: block;
+    float: right;
+    background: green;
+    height: 40px;
+    padding: 0 20px;
+    line-height: 40px;
+}
+
+#nic_name
+{
+    height: 40px;
+    line-height: 40px;
+}

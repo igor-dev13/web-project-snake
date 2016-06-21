@@ -1,0 +1,52 @@
+﻿<html>
+<head>
+    <link rel="stylesheet" href="css/snake.css" />
+    <script type="text/javascript" src="js/snake.js"></script>
+    <script type="text/javascript" src="js/snake-grid.js"></script>
+    <script type="text/javascript" src="js/snake-images.js"></script>
+    <script type="text/javascript" src="js/snake-level.js"></script>
+    <script type="text/javascript" src="js/snake-events.js"></script>
+    <script src="/js/vendor/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="js/snake-score-check.js"></script>
+
+    <script type="text/javascript">
+        window.gameLoop = function()
+        {
+            Snake.move();
+            Snake.drawGrid();
+            Snake.drawScore();
+
+            if (Snake.gameOver == false)
+            {
+                setTimeout(window.gameLoop, Snake.speed);
+            }
+            else
+            {
+                Snake.drawGameOver();
+                Snake.scoreCheck();
+            }
+        }
+
+        window.onload = function()
+        {
+            Snake.init('game-screen', 0, window.gameLoop);
+        }
+    </script>
+</head>
+<body>
+<div class="wrapper">
+
+    <div class="score-block">
+        <p>Ваше имя:</p>
+        <input id="nic_name" type="text" size="40" />
+        <span id="game-submit">Отправить</span>
+    </div>
+
+    <div class="results"></div>
+
+    <canvas id="game-screen" width="800" height="600"></canvas>
+
+    <div class="score-table"></div>
+</div>
+</body>
+</html>

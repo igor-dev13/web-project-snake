@@ -1,5 +1,4 @@
 <?php
-
     function getRecordsCount()
     {
         $records = dbQuery("SELECT * FROM `records`");

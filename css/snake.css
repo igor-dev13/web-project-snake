@@ -1,18 +1,32 @@
 body
 {
-    background-color: #999;
+    background-color: #f1f1f1;
+    position: relative;
+}
+
+a
+{
+    color: #466991;
 }
 
 .wrapper
 {
     width: 1000px;
+    height: 100%;
     margin: 0 auto;
+    position: relative;
+    color: #466991;
 }
 
 #game-screen
 {
     margin: 0 auto;
-    display: block;
+    height: 0;
+    transition: height  1s linear;
+    -webkit-transition: height  1s linear;
+    -moz-transition: height  1s linear;
+    -o-transition: height  1s linear;
+    -ms-transition: height  1s linear;
 }
 
 .score-block
@@ -22,7 +36,7 @@ body
     text-align: center;
     font-family: Verdana, sans-serif;
     font-size: 24px;
-    color: #ffffff;
+    color: #466991;
     display: none;
 }
 
@@ -36,10 +50,15 @@ input
 {
     font-family: Verdana, sans-serif;
     font-size: 24px;
-    color: #ffffff;
+    color: #466991;
     text-align: center;
     margin: 20px auto;
     width: 300px;
+}
+
+#game-restart
+{
+    display: none;
 }
 
 .odd
@@ -47,6 +66,7 @@ input
     display: block;
     background-color: darkred;
     border: 1px solid #000;
+    color: #ffffff;
 }
 
 .even
@@ -55,12 +75,14 @@ input
     display: block;
     background-color: blueviolet;
     margin-bottom: 10px;
+    color: #ffffff;
 }
 
 #game-submit
 {
     cursor: pointer;
     display: block;
+    color: #ffffff;
     float: right;
     background: green;
     height: 40px;
@@ -72,4 +94,57 @@ input
 {
     height: 40px;
     line-height: 40px;
+}
+
+#game-options
+{
+    display: block;
+    opacity: 0;
+    text-align: center;
+    top: 50%;
+    width: 660px;
+    left: 50%;
+    margin-top: -75px;
+    margin-left: -330px;
+    position: absolute;
+    zoom: 1;
+    filter: alpha(opacity=0);
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#start-btn, #options-btn, #option-level, #option-bonus-speed, #option-back, #option-snake-hide
+{
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
+    width: 100%;
+    font-family: Verdana, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    zoom: 1;
+    filter: alpha(opacity=0);
+    -webkit-transition: heigth 0.5s ease-in-out;
+    -moz-transition: heigth 0.5s ease-in-out;
+    -ms-transition: heigth 0.5s ease-in-out;
+    -o-transition: heigth 0.5s ease-in-out;
+    transition: heigth 0.5s ease-in-out;
+}
+
+#start-btn:hover, #options-btn:hover, #option-bonus:hover, #option-level:hover, #option-back:hover, #option-snake-hide:hover
+{
+    color: #31537a;
+}
+
+.color-green
+{
+    color: green;
+}
+
+.color-red
+{
+    color: red;
 }

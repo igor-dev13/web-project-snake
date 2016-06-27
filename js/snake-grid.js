@@ -35,6 +35,15 @@ Snake.drawGrid = function ()
     }
 
     Snake.food.draw(Snake.context);
+    
+    if (Snake.bonus)
+    {
+        Snake.bonus.draw(Snake.context);
+    }
+    if (Snake.antiBonus)
+    {
+        Snake.antiBonus.draw(Snake.context);
+    }
 }
 
 Snake.drawScore = function ()
@@ -75,20 +84,58 @@ Snake.setPositionRedraw = function (x, y)
     Snake.grid[index].redraw = true;
 }
 
+Snake.setRundomPosition = function (curentType)
+{
+    var self = this;
+    self.curentType = curentType;
+    self.x = 0;
+    self.y = 0;
+
+    while (self.curentType == curentType)
+    {
+        self.x = Math.floor(Math.random() * Snake.gridWidth);
+        self.y = Math.floor(Math.random() * Snake.gridHeight);
+        self.curentType = Snake.getTypeFromPosition(self.x, self.y);
+    }
+
+    return self;
+}
+
 Snake.createFood = function ()
 {
-    var curentType = Snake.gridTypes.WALL;
-    var x = 0;
-    var y = 0;
+    Snake.foodCoords = new Snake.setRundomPosition(Snake.gridTypes.WALL);
+    Snake.food = new Snake.gridItem(Snake.foodCoords.x, Snake.foodCoords.y, Snake.gridTypes.FOOD);
+}
 
-    while ((curentType == Snake.gridTypes.WALL) || (curentType == Snake.gridTypes.SNAKE) || (curentType == Snake.gridTypes.HEAD))
+Snake.createBonus = function (frequency)
+{
+    var frequencyTime = (60000 / frequency);
+    setInterval(bonusCreation, frequencyTime);
+
+    function bonusCreation()
     {
-        x = Math.floor(Math.random() * Snake.gridWidth);
-        y = Math.floor(Math.random() * Snake.gridHeight); 
-        curentType = Snake.getTypeFromPosition(x, y);
+        // Если бонус еше не выпал или он не был собран
+        if (!Snake.bonus || (Snake.bonus.x == '-1' && Snake.bonus.y == '-1'))
+        {
+            Snake.bonusCoords = new Snake.setRundomPosition(Snake.gridTypes.WALL);
+            Snake.bonus = new Snake.gridItem(Snake.bonusCoords.x, Snake.bonusCoords.y, Snake.gridTypes.SPEEDBONUS);
+        }
     }
-    console.log(Snake.getTypeFromPosition(x, y));
-    Snake.food = new Snake.gridItem(x, y, Snake.gridTypes.FOOD);
+}
+
+Snake.createAntiBonus = function (frequency)
+{
+    var frequencyTime = (60000 / frequency);
+    setInterval(antiBonusCreation, frequencyTime);
+
+    function antiBonusCreation()
+    {
+        if (!Snake.antiBonus || (Snake.antiBonus.x == '-1' && Snake.antiBonus.y == '-1'))
+        {
+            Snake.antiBonusCoords = new Snake.setRundomPosition(Snake.gridTypes.WALL);
+            Snake.antiBonus = new Snake.gridItem(Snake.antiBonusCoords.x, Snake.antiBonusCoords.y, Snake.gridTypes.HIDEANTIBONUS);
+        }
+    }
 }
 
 Snake.gridItem = function (x, y, type)

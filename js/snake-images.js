@@ -2,11 +2,14 @@ var Snake = Snake || {};
 
 Snake.loadImages = function ()
 {
-    Snake.imageFiles[Snake.gridTypes.GRASS] = ["img/floor.png", null]; // массив в нем - первый элемент картинка, второй объект картинки
+    // массив в нем - первый элемент картинка, второй объект картинки
+    Snake.imageFiles[Snake.gridTypes.GRASS] = ["img/floor.png", null];
     Snake.imageFiles[Snake.gridTypes.WALL] = ["img/wall.png", null];
     Snake.imageFiles[Snake.gridTypes.SNAKE] = ["img/snake.png", null];
     Snake.imageFiles[Snake.gridTypes.FOOD] = ["img/food.png", null];
     Snake.imageFiles[Snake.gridTypes.HEAD] = ["img/head.png", null];
+    Snake.imageFiles[Snake.gridTypes.SPEEDBONUS] = ["img/speed.png", null];
+    Snake.imageFiles[Snake.gridTypes.HIDEANTIBONUS] = ["img/antibonus.png", null];
 
     Snake.imagesLoaded = 0;
 

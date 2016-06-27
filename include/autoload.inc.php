@@ -1,5 +1,5 @@
 <?php
-    $requireFileDir = scandir($_SERVER["DOCUMENT_ROOT"] . "/admin/include/");
+    $requireFileDir = scandir($_SERVER["DOCUMENT_ROOT"] . "/include/");
 
     if($requireFileDir)
     {

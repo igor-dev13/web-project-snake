@@ -1,17 +1,24 @@
 var Snake = Snake || {};
 
-Snake.gridTypes = { GRASS: 0, WALL: 1, SNAKE: 2, FOOD: 3, HEAD: 4 }; // игровые константы
-Snake.grid = [];
-Snake.imageFiles = [];
-Snake.levels = [];
-Snake.snake = [];
-Snake.moveX = 0;
-Snake.moveY = 0;
-Snake.grow = 0;
-Snake.score = 0;
-Snake.speed = 300;
-Snake.level = 0;
-Snake.gameOver = false;
+Snake.delay = function ()
+{
+    window.setTimeout(function ()
+    {
+        if (Snake.speedBonus === undefined || Snake.antiBonusHide === undefined)
+        {
+            window.setTimeout(Snake.delay(), 10);
+        }
+        else
+        {
+            Snake.menuInit();
+            Snake.init('game-screen', 0, window.gameLoop);
+            Snake.nickSubmit();
+            document.getElementById('game-options').style.opacity = '1';
+        }
+    }, 0);
+}
+
+Snake.delay();
 
 Snake.init = function (canvas, level, loadingCompleteCallback)
 {
@@ -22,8 +29,18 @@ Snake.init = function (canvas, level, loadingCompleteCallback)
     Snake.loadImages();
     Snake.loadGrid(level);
     Snake.createFood();
-    Snake.registerEvents();
 
+    if (Snake.speedBonus)
+    {
+        Snake.createBonus(Snake.speedBonus);
+    }
+
+    if (Snake.antiBonusHide)
+    {
+        Snake.createAntiBonus(Snake.antiBonusHide);
+    }
+
+    Snake.registerEvents();
     Snake.waitForImages(loadingCompleteCallback);
 }
 
@@ -36,7 +53,7 @@ Snake.move = function ()
     // движение змейки
     for (var i = Snake.snake.length - 1; i > 0; i-- )
     {
-        Snake.setPositionRedraw(Snake.snake[i].x, Snake.snake[i].y); // чтобы старая точка змейки затералась
+        Snake.setPositionRedraw(Snake.snake[i].x, Snake.snake[i].y); // чтобы старые точки змейки затерались
         Snake.snake[i].x = Snake.snake[i - 1].x;
         Snake.snake[i].y = Snake.snake[i - 1].y;
 
@@ -48,6 +65,25 @@ Snake.move = function ()
     Snake.snake[0].x += Snake.moveX;
     Snake.snake[0].y += Snake.moveY;
     Snake.snake[0].redraw = true;
+    Snake.food.redraw = true;
+
+    if (Snake.bonus)
+    {
+        Snake.bonus.redraw = true;
+    }
+
+    if (Snake.antiBonus)
+    {
+        Snake.antiBonus.redraw = true;
+    }
+
+    if (Snake.antiBonus)
+    {
+        if (Snake.snake[0].type == Snake.gridTypes.GRASS)
+        {
+            window.setTimeout(Snake.discovery, Snake.antiBonusTime);
+        }
+    }
 
     // если съели, то к концу змейки добавляем элемент
     if (Snake.grow > 0)
@@ -68,21 +104,56 @@ Snake.checkCollisions = function()
         Snake.score++;
         Snake.grow = 1;
 
-
-        if (Snake.score % 5 == 0)
+        if (Snake.score % 6 == 0)
         {
-            Snake.level++;
-            Snake.moveX = 0;
-            Snake.moveY = 0;
-            Snake.grow = 0;
-            Snake.snake = [];
-            Snake.speed -= 50;
-
-            Snake.grid = [];
-            Snake.loadGrid(Snake.level);
+            if (Snake.levelsAreActive)
+            {
+                Snake.snake = [];
+                Snake.speed -= 20;
+                Snake.grid = [];
+                Snake.moveX = 0;
+                Snake.bonus.x = '-1';
+                Snake.bonus.y = '-1';
+                Snake.antiBonus.x = '-1';
+                Snake.antiBonus.y = '-1';
+                Snake.createBonus();
+                Snake.createAntiBonus();
+                Snake.moveY = 0;
+                Snake.grow = 0;
+                Snake.level++;
+                Snake.loadGrid(Snake.level);
+            }
         }
 
         Snake.createFood();
+    }
+
+    if (Snake.bonus)
+    {
+        if (Snake.snake[0].x == Snake.bonus.x && Snake.snake[0].y == Snake.bonus.y)
+        {
+            Snake.speed -= 150;
+
+            Snake.returnSpeed = function()
+            {
+                Snake.speed += 150;
+            }
+
+            setTimeout(Snake.returnSpeed, 10000);
+            Snake.bonus.x = -1;
+            Snake.bonus.y = -1;
+        }
+    }
+
+    if (Snake.antiBonus)
+    {
+        if (Snake.snake[0].x == Snake.antiBonus.x && Snake.snake[0].y == Snake.antiBonus.y)
+        {
+            var frequencyTime = (60000 / Snake.antiBonus);
+            window.setTimeout(Snake.hiding, frequencyTime);
+            Snake.antiBonus.x = '-1';
+            Snake.antiBonus.y = '-1';
+        }
     }
 
     // проверям на столкновение со стеной
@@ -91,9 +162,33 @@ Snake.checkCollisions = function()
         Snake.gameOver = true;
     }
 
-    // проверям не врезались ли головой в хвост
     for (var i = 1; i < Snake.snake.length; i++)
     {
+        // проверяем на появилась ли еда в самой змейке
+        if (Snake.snake[i].x == Snake.food.x && Snake.snake[i].y == Snake.food.y)
+        {
+            Snake.createFood();
+        }
+
+        // проверка не попали ли координаты еды и бонуса в одну точку
+        if (Snake.bonus)
+        {
+            if (Snake.food.x == Snake.bonus.x && Snake.food.y == Snake.bonus.y)
+            {
+                Snake.createBonus();
+            }
+        }
+
+        // проверяем на появился ли бонус в змейке
+        if (Snake.bonus)
+        {
+            if (Snake.snake[i].x == Snake.bonus.x && Snake.snake[i].y == Snake.bonus.y)
+            {
+                Snake.createBonus();
+            }
+        }
+
+        // проверям не врезались ли головой в хвост
         if (Snake.snake[0].x == Snake.snake[i].x && Snake.snake[0].y == Snake.snake[i].y)
         {
             Snake.gameOver = true;
@@ -101,6 +196,29 @@ Snake.checkCollisions = function()
     }
 }
 
+Snake.hiding = function()
+{
+    for (var i = 0; i < Snake.grid.length; i++)
+    {
+        if (Snake.snake[i] !== undefined)
+        {
+            Snake.snake[i].type = Snake.gridTypes.GRASS;
+        }
+    }
+}
+
+Snake.discovery = function()
+{
+    Snake.snake[0].type = Snake.gridTypes.HEAD;
+
+    for (var i = 1; i < Snake.grid.length; i++)
+    {
+        if (Snake.snake[i] !== undefined)
+        {
+            Snake.snake[i].type = Snake.gridTypes.SNAKE;
+        }
+    }
+}
 
 
 

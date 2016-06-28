@@ -99,7 +99,7 @@ Snake.optionLevel = function (action)
     $.ajax(
     {
         type: 'POST',
-        url: '/web/game-options.php',
+        url: '/php/game_options.php',
         dataType: "html",
         data: 'option=' + action,
         success: function (data)
@@ -126,7 +126,7 @@ Snake.optionBonus = function (action)
     $.ajax(
     {
         type: 'POST',
-        url: '/web/game-options.php',
+        url: '/php/game_options.php',
         data: 'option=' + action,
         success: function (data)
         {
@@ -162,7 +162,7 @@ Snake.optionHide = function (action)
     $.ajax(
         {
             type: 'POST',
-            url: '/web/game-options.php',
+            url: '/php/game_options.php',
             data: 'option=' + action,
             success: function (data)
             {

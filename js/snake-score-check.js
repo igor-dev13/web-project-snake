@@ -5,7 +5,7 @@ Snake.scoreCheck = function()
     $.ajax(
     {
         type: 'POST',
-        url: '/web/player-score.php',
+        url: '/php/player_score.php',
         data: 'score=' + Snake.score,
         success: function(data)
         {
@@ -28,7 +28,7 @@ Snake.scoreInsert = function(nicName)
     $.ajax(
     {
         type: 'POST',
-        url: '/web/player-score.php',
+        url: '/php/player_score.php',
         dataType: "json",
         data: 'insert=' + nicName + '&result=' + Snake.score,
         success: function(data)

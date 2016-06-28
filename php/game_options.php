@@ -1,34 +1,36 @@
 <?php
-require_once '../include/database.inc.php';
+require_once 'include/database.inc.php';
 
-if (isset($_POST['option']))
+$gameOption = $_POST['option'];
+
+if (isset($gameOption))
 {
-    if ($_POST['option'] == 'check')
+    if ($gameOption == 'check')
     {
         printOptionStatus('level_change');
     }
 
-    if ($_POST['option'] == 'change')
+    if ($gameOption == 'change')
     {
         setOptionLevelStatus('level_change');
     }
 
-    if ($_POST['option'] == 'checkBonus')
+    if ($gameOption == 'checkBonus')
     {
         printOptionStatus('speed_bonus');
     }
 
-    if ($_POST['option'] == 'changeBonus')
+    if ($gameOption == 'changeBonus')
     {
         setOptionBonusStatus('speed_bonus');
     }
 
-    if ($_POST['option'] == 'checkOptionHide')
+    if ($gameOption == 'checkOptionHide')
     {
         printOptionStatus('hide_bonus');
     }
 
-    if ($_POST['option'] == 'changeOptionHide')
+    if ($gameOption == 'changeOptionHide')
     {
         setOptionBonusStatus('hide_bonus');
     }

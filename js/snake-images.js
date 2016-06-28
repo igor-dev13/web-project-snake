@@ -2,7 +2,7 @@ var Snake = Snake || {};
 
 Snake.loadImages = function ()
 {
-    // массив в нем - первый элемент картинка, второй объект картинки
+    // ассоциативный массив в нем - первый элемент картинка, второй объект картинки
     Snake.imageFiles[Snake.gridTypes.GRASS] = ["img/floor.png", null];
     Snake.imageFiles[Snake.gridTypes.WALL] = ["img/wall.png", null];
     Snake.imageFiles[Snake.gridTypes.SNAKE] = ["img/snake.png", null];

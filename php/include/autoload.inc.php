@@ -1,5 +1,5 @@
 <?php
-    $requireFileDir = scandir($_SERVER["DOCUMENT_ROOT"] . "/include/");
+    $requireFileDir = scandir($_SERVER["DOCUMENT_ROOT"] . "/php/include/");
 
     if($requireFileDir)
     {

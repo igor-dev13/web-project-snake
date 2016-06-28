@@ -4,7 +4,7 @@ Snake.delay = function ()
 {
     window.setTimeout(function ()
     {
-        if (Snake.speedBonus === undefined || Snake.antiBonusHide === undefined)
+        if (Snake.speedBonus === undefined || Snake.antiBonusHide === undefined || Snake.levelsAreActive === undefined)
         {
             window.setTimeout(Snake.delay(), 10);
         }
@@ -75,10 +75,7 @@ Snake.move = function ()
     if (Snake.antiBonus)
     {
         Snake.antiBonus.redraw = true;
-    }
 
-    if (Snake.antiBonus)
-    {
         if (Snake.snake[0].type == Snake.gridTypes.GRASS)
         {
             window.setTimeout(Snake.discovery, Snake.antiBonusTime);
@@ -104,20 +101,28 @@ Snake.checkCollisions = function()
         Snake.score++;
         Snake.grow = 1;
 
-        if (Snake.score % 6 == 0)
+        if (Snake.score % Snake.levelUpCount == 0)
         {
             if (Snake.levelsAreActive)
             {
+                if (Snake.bonus)
+                {
+                    Snake.bonus.x = '-1';
+                    Snake.bonus.y = '-1';
+                    Snake.createBonus();
+                }
+
+                if (Snake.antiBonus)
+                {
+                    Snake.antiBonus.x = '-1';
+                    Snake.antiBonus.y = '-1';
+                    Snake.createAntiBonus();
+                }
+
                 Snake.snake = [];
-                Snake.speed -= 20;
+                Snake.speed -= Snake.accelerateOnNewLevelSpeed;
                 Snake.grid = [];
                 Snake.moveX = 0;
-                Snake.bonus.x = '-1';
-                Snake.bonus.y = '-1';
-                Snake.antiBonus.x = '-1';
-                Snake.antiBonus.y = '-1';
-                Snake.createBonus();
-                Snake.createAntiBonus();
                 Snake.moveY = 0;
                 Snake.grow = 0;
                 Snake.level++;
@@ -132,14 +137,14 @@ Snake.checkCollisions = function()
     {
         if (Snake.snake[0].x == Snake.bonus.x && Snake.snake[0].y == Snake.bonus.y)
         {
-            Snake.speed -= 150;
+            Snake.speed -= Snake.speedBonusValue;
 
             Snake.returnSpeed = function()
             {
-                Snake.speed += 150;
+                Snake.speed += Snake.speedBonusValue;
             }
 
-            setTimeout(Snake.returnSpeed, 10000);
+            setTimeout(Snake.returnSpeed, Snake.speedBonusTime);
             Snake.bonus.x = -1;
             Snake.bonus.y = -1;
         }
@@ -149,7 +154,7 @@ Snake.checkCollisions = function()
     {
         if (Snake.snake[0].x == Snake.antiBonus.x && Snake.snake[0].y == Snake.antiBonus.y)
         {
-            var frequencyTime = (60000 / Snake.antiBonus);
+            var frequencyTime = (Snake.commonDividendBonusTime / Snake.antiBonus);
             window.setTimeout(Snake.hiding, frequencyTime);
             Snake.antiBonus.x = '-1';
             Snake.antiBonus.y = '-1';

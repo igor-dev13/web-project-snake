@@ -34,7 +34,7 @@ a
     width: 800px;
     margin: 20px auto;
     text-align: center;
-    font-family: Verdana, sans-serif;
+    font-family: 'Lobster', cursive;
     font-size: 24px;
     color: #466991;
     display: none;
@@ -42,13 +42,13 @@ a
 
 input
 {
-    font-family: Verdana, sans-serif;
+    font-family: 'Lobster', cursive;
     font-size: 24px;
 }
 
 .results
 {
-    font-family: Verdana, sans-serif;
+    font-family: 'Lobster', cursive;
     font-size: 24px;
     color: #466991;
     text-align: center;
@@ -104,7 +104,7 @@ input
     top: 50%;
     width: 660px;
     left: 50%;
-    margin-top: -75px;
+    margin-top: -110px;
     margin-left: -330px;
     position: absolute;
     zoom: 1;
@@ -122,7 +122,7 @@ input
     margin: 20px auto;
     cursor: pointer;
     width: 100%;
-    font-family: Verdana, sans-serif;
+    font-family: 'Lobster', cursive;
     font-size: 24px;
     font-weight: bold;
     zoom: 1;

@@ -2,20 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c9692b6-c7c0-44f4-aa81-d95c8d652f37" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/antibonus.png" afterPath="$PROJECT_DIR$/img/antibonus.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/speed.png" afterPath="$PROJECT_DIR$/img/speed.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/wall.png" afterPath="$PROJECT_DIR$/img/wall.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/snake.css" afterPath="$PROJECT_DIR$/css/snake.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/game-loop.js" afterPath="$PROJECT_DIR$/js/game-loop.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/snake-constants.js" afterPath="$PROJECT_DIR$/js/snake-constants.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/snake-game-options.js" afterPath="$PROJECT_DIR$/js/snake-game-options.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/snake-grid.js" afterPath="$PROJECT_DIR$/js/snake-grid.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/snake-images.js" afterPath="$PROJECT_DIR$/js/snake-images.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/snake-level.js" afterPath="$PROJECT_DIR$/js/snake-level.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/snake-score-check.js" afterPath="$PROJECT_DIR$/js/snake-score-check.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/snake.js" afterPath="$PROJECT_DIR$/js/snake.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/admin/include/autoload.inc.php" afterPath="$PROJECT_DIR$/include/autoload.inc.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/admin/include/config.inc.php" afterPath="$PROJECT_DIR$/include/config.inc.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/admin/include/database.inc.php" afterPath="$PROJECT_DIR$/include/database.inc.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/admin/include/score.php" afterPath="$PROJECT_DIR$/include/score.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/admin/index.php" afterPath="$PROJECT_DIR$/web/index.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/admin/player-score.php" afterPath="$PROJECT_DIR$/web/player-score.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/include/autoload.inc.php" afterPath="$PROJECT_DIR$/php/include/autoload.inc.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/include/config.inc.php" afterPath="$PROJECT_DIR$/php/include/config.inc.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/include/database.inc.php" afterPath="$PROJECT_DIR$/php/include/database.inc.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/include/options.php" afterPath="$PROJECT_DIR$/php/include/options.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/include/score.php" afterPath="$PROJECT_DIR$/php/include/score.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/vendor/jquery-3.0.0.min.js" afterPath="$PROJECT_DIR$/js/lib/jquery-3.0.0.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/game-options.php" afterPath="$PROJECT_DIR$/php/game_options.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/index.php" afterPath="$PROJECT_DIR$/php/index.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/player-score.php" afterPath="$PROJECT_DIR$/php/player_score.php" />
     </list>
     <ignored path="snake.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,79 +48,28 @@
       <file leaf-file-name="game-loop.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/game-loop.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+            <state relative-caret-position="110">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="snake-game-options.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/snake-game-options.js">
+      <file leaf-file-name="snake-constants.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/snake-constants.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="599">
-              <caret line="186" column="39" selection-start-line="186" selection-start-column="39" selection-end-line="186" selection-end-column="39" />
+            <state relative-caret-position="110">
+              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game-options.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/game-options.php">
+      <file leaf-file-name="snake.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/snake.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="options.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/options.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
-              <folding>
-                <marker date="1466927272058" expanded="true" signature="83:135" ph="SELECT `stat... options" />
-                <marker date="1466927272058" expanded="true" signature="83:137" ph="SELECT `stat... options" />
-                <marker date="1466927272058" expanded="true" signature="83:145" ph="SELECT `stat... options" />
-                <marker date="1466927272058" expanded="true" signature="83:147" ph="SELECT `stat... options" />
-                <marker date="1466927272058" expanded="true" signature="837:902" ph="UPDATE `opti... " />
-                <marker date="1466927272058" expanded="true" signature="960:1025" ph="UPDATE `opti... " />
-                <marker date="1466927272058" expanded="true" signature="1207:1272" ph="UPDATE `opti... " />
-                <marker date="1466927272058" expanded="true" signature="1365:1430" ph="UPDATE `opti... " />
-                <marker date="1466927272058" expanded="true" signature="1523:1588" ph="UPDATE `opti... " />
-                <marker date="1466927272058" expanded="true" signature="1681:1746" ph="UPDATE `opti... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="snake-score-check.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/snake-score-check.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="17" column="82" selection-start-line="17" selection-start-column="82" selection-end-line="17" selection-end-column="82" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="snake.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/snake.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="107" column="24" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="snake-images.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/snake-images.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="82" selection-start-line="11" selection-start-column="82" selection-end-line="11" selection-end-column="82" />
+            <state relative-caret-position="379">
+              <caret line="156" column="62" selection-start-line="156" selection-start-column="62" selection-end-line="156" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -121,28 +78,8 @@
       <file leaf-file-name="snake-grid.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/snake-grid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="117" column="50" selection-start-line="117" selection-start-column="29" selection-end-line="117" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="snake.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/snake.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="154" column="37" selection-start-line="154" selection-start-column="37" selection-end-line="154" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="snake-constants.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/snake-constants.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="19" />
+            <state relative-caret-position="550">
+              <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -181,16 +118,19 @@
         <option value="$PROJECT_DIR$/include/database.inc.php" />
         <option value="$PROJECT_DIR$/include/options.php" />
         <option value="$PROJECT_DIR$/js/snake-level.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/game-loop.js" />
         <option value="$PROJECT_DIR$/js/snake-score-check.js" />
         <option value="$PROJECT_DIR$/web/game-options.php" />
-        <option value="$PROJECT_DIR$/css/snake.css" />
         <option value="$PROJECT_DIR$/js/snake-images.js" />
-        <option value="$PROJECT_DIR$/js/snake-grid.js" />
-        <option value="$PROJECT_DIR$/js/snake-constants.js" />
         <option value="$PROJECT_DIR$/js/snake-game-options.js" />
+        <option value="$PROJECT_DIR$/php/player-score.php" />
+        <option value="$PROJECT_DIR$/php/include/autoload.inc.php" />
+        <option value="$PROJECT_DIR$/php/game-options.php" />
+        <option value="$PROJECT_DIR$/js/game-loop.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/snake.css" />
+        <option value="$PROJECT_DIR$/js/snake-grid.js" />
         <option value="$PROJECT_DIR$/js/snake.js" />
+        <option value="$PROJECT_DIR$/js/snake-constants.js" />
       </list>
     </option>
   </component>
@@ -354,7 +294,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -383,7 +322,25 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="include" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -398,20 +355,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="snake" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="snake" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="include" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -446,6 +389,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -457,6 +401,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\USR\www\snake\php" />
       <recent name="D:\USR\www\snake" />
       <recent name="D:\USR\www\snake\web" />
     </key>
@@ -534,12 +479,13 @@
       <workItem from="1466887452575" duration="2632000" />
       <workItem from="1466925162427" duration="13590000" />
       <workItem from="1466967497224" duration="11666000" />
-      <workItem from="1467053176431" duration="9623000" />
+      <workItem from="1467053176431" duration="10401000" />
+      <workItem from="1467138757737" duration="10282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165629000" />
+    <option name="totallyTimeSpent" value="176689000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -800,45 +746,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/config.inc.php">
+    <entry file="file://$PROJECT_DIR$/php/include/config.inc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/autoload.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="59" selection-start-line="1" selection-start-column="59" selection-end-line="1" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/database.inc.php">
+    <entry file="file://$PROJECT_DIR$/php/include/database.inc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/score.php">
+    <entry file="file://$PROJECT_DIR$/php/include/score.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/player-score.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -846,37 +771,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="709">
           <caret line="84" column="18" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/php/include/options.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/game-loop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/snake-score-check.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="17" column="82" selection-start-line="17" selection-start-column="82" selection-end-line="17" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/options.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
+        <state relative-caret-position="990">
           <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
           <folding>
             <marker date="1466927272058" expanded="true" signature="83:135" ph="SELECT `stat... options" />
@@ -893,58 +793,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/game-options.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/snake.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="107" column="24" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/snake-images.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="82" selection-start-line="11" selection-start-column="82" selection-end-line="11" selection-end-column="82" />
+        <state relative-caret-position="330">
+          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/include/autoload.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="75" selection-start-line="1" selection-start-column="75" selection-end-line="1" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/player_score.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/game_options.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/snake-score-check.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/snake-game-options.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="186" column="39" selection-start-line="186" selection-start-column="39" selection-end-line="186" selection-end-column="39" />
+        <state relative-caret-position="1606">
+          <caret line="73" column="40" selection-start-line="73" selection-start-column="40" selection-end-line="73" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/snake-constants.js">
+    <entry file="file://$PROJECT_DIR$/js/game-loop.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="19" />
+        <state relative-caret-position="110">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="120" selection-start-line="2" selection-start-column="120" selection-end-line="2" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/snake.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="106" column="20" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/snake-grid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="117" column="50" selection-start-line="117" selection-start-column="29" selection-end-line="117" selection-end-column="50" />
+        <state relative-caret-position="550">
+          <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/snake.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="154" column="37" selection-start-line="154" selection-start-column="37" selection-end-line="154" selection-end-column="37" />
+        <state relative-caret-position="379">
+          <caret line="156" column="62" selection-start-line="156" selection-start-column="62" selection-end-line="156" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/snake-constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
           <folding />
         </state>
       </provider>

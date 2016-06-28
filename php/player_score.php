@@ -1,5 +1,5 @@
 <?php
-    require_once '../include/database.inc.php';
+    require_once 'include/database.inc.php';
 
     if (isset($_POST['score']))
     {

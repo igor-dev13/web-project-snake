@@ -2,7 +2,7 @@ var Snake = Snake || {};
 
 Snake.loadGrid = function (level)
 {
-    // устанавливаем матрицу 800 на 600 - отрезок 20px на 15px соответствует картинке 40px на 40px
+    // устанавливаем матрицу 800 на 600
     Snake.gridWidth = 20;
     Snake.gridHeight = 15;
     Snake.gridElementWidth = Snake.canvasElement.width / Snake.gridWidth ; // 800 : 20 = 40
@@ -49,7 +49,7 @@ Snake.drawGrid = function ()
 Snake.drawScore = function ()
 {
     Snake.context.fillStyle = 'rgb(255, 255, 255)';
-    Snake.context.font = "30px Verdana";
+    Snake.context.font = "30px Lobster";
     Snake.context.fillText(Snake.score.toString(), 50, 70);
     Snake.setPositionRedraw(1, 1);
     Snake.setPositionRedraw(2, 1);
@@ -57,7 +57,7 @@ Snake.drawScore = function ()
 
 Snake.drawGameOver = function()
 {
-    Snake.context.font = "30px Verdana";
+    Snake.context.font = "30px Lobster";
     Snake.context.fillStyle = 'rgb(255, 0, 0)';
     Snake.context.globalAlpha = 0.75;              // opacity
     Snake.context.fillRect(0, 0, 800, 600);
@@ -84,14 +84,14 @@ Snake.setPositionRedraw = function (x, y)
     Snake.grid[index].redraw = true;
 }
 
-Snake.setRundomPosition = function (curentType)
+Snake.setRandomPosition = function (currentType)
 {
     var self = this;
-    self.curentType = curentType;
+    self.curentType = currentType;
     self.x = 0;
     self.y = 0;
 
-    while (self.curentType == curentType)
+    while (self.curentType == currentType)
     {
         self.x = Math.floor(Math.random() * Snake.gridWidth);
         self.y = Math.floor(Math.random() * Snake.gridHeight);
@@ -103,13 +103,13 @@ Snake.setRundomPosition = function (curentType)
 
 Snake.createFood = function ()
 {
-    Snake.foodCoords = new Snake.setRundomPosition(Snake.gridTypes.WALL);
+    Snake.foodCoords = new Snake.setRandomPosition(Snake.gridTypes.WALL);
     Snake.food = new Snake.gridItem(Snake.foodCoords.x, Snake.foodCoords.y, Snake.gridTypes.FOOD);
 }
 
 Snake.createBonus = function (frequency)
 {
-    var frequencyTime = (60000 / frequency);
+    var frequencyTime = (Snake.commonDividendBonusTime / frequency);
     setInterval(bonusCreation, frequencyTime);
 
     function bonusCreation()
@@ -117,7 +117,7 @@ Snake.createBonus = function (frequency)
         // Если бонус еше не выпал или он не был собран
         if (!Snake.bonus || (Snake.bonus.x == '-1' && Snake.bonus.y == '-1'))
         {
-            Snake.bonusCoords = new Snake.setRundomPosition(Snake.gridTypes.WALL);
+            Snake.bonusCoords = new Snake.setRandomPosition(Snake.gridTypes.WALL);
             Snake.bonus = new Snake.gridItem(Snake.bonusCoords.x, Snake.bonusCoords.y, Snake.gridTypes.SPEEDBONUS);
         }
     }
@@ -125,14 +125,14 @@ Snake.createBonus = function (frequency)
 
 Snake.createAntiBonus = function (frequency)
 {
-    var frequencyTime = (60000 / frequency);
+    var frequencyTime = (Snake.commonDividendBonusTime / frequency);
     setInterval(antiBonusCreation, frequencyTime);
 
     function antiBonusCreation()
     {
         if (!Snake.antiBonus || (Snake.antiBonus.x == '-1' && Snake.antiBonus.y == '-1'))
         {
-            Snake.antiBonusCoords = new Snake.setRundomPosition(Snake.gridTypes.WALL);
+            Snake.antiBonusCoords = new Snake.setRandomPosition(Snake.gridTypes.WALL);
             Snake.antiBonus = new Snake.gridItem(Snake.antiBonusCoords.x, Snake.antiBonusCoords.y, Snake.gridTypes.HIDEANTIBONUS);
         }
     }
@@ -142,13 +142,13 @@ Snake.gridItem = function (x, y, type)
 {
     var self = this;
 
-    this.redraw = true;
-    this.x = x;
-    this.y = y;
-    this.type = type;
+    self.redraw = true;
+    self.x = x;
+    self.y = y;
+    self.type = type;
 
     // рисуем кусочек картинки
-    this.draw = function (context)
+    self.draw = function (context)
     {
         if (self.redraw)
         {

@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c9692b6-c7c0-44f4-aa81-d95c8d652f37" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/antibonus.png" afterPath="$PROJECT_DIR$/img/antibonus.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/speed.png" afterPath="$PROJECT_DIR$/img/speed.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/wall.png" afterPath="$PROJECT_DIR$/img/wall.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/snake.css" afterPath="$PROJECT_DIR$/css/snake.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/game-loop.js" afterPath="$PROJECT_DIR$/js/game-loop.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/snake-constants.js" afterPath="$PROJECT_DIR$/js/snake-constants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/snake-game-options.js" afterPath="$PROJECT_DIR$/js/snake-game-options.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/snake-grid.js" afterPath="$PROJECT_DIR$/js/snake-grid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/snake-images.js" afterPath="$PROJECT_DIR$/js/snake-images.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/snake-score-check.js" afterPath="$PROJECT_DIR$/js/snake-score-check.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/snake.js" afterPath="$PROJECT_DIR$/js/snake.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/include/autoload.inc.php" afterPath="$PROJECT_DIR$/php/include/autoload.inc.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/include/config.inc.php" afterPath="$PROJECT_DIR$/php/include/config.inc.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/include/database.inc.php" afterPath="$PROJECT_DIR$/php/include/database.inc.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/include/options.php" afterPath="$PROJECT_DIR$/php/include/options.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/include/score.php" afterPath="$PROJECT_DIR$/php/include/score.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/vendor/jquery-3.0.0.min.js" afterPath="$PROJECT_DIR$/js/lib/jquery-3.0.0.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/game-options.php" afterPath="$PROJECT_DIR$/php/game_options.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/index.php" afterPath="$PROJECT_DIR$/php/index.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/player-score.php" afterPath="$PROJECT_DIR$/php/player_score.php" />
-    </list>
+    <list default="true" id="1c9692b6-c7c0-44f4-aa81-d95c8d652f37" name="Default" comment="" />
     <ignored path="snake.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -480,12 +457,12 @@
       <workItem from="1466925162427" duration="13590000" />
       <workItem from="1466967497224" duration="11666000" />
       <workItem from="1467053176431" duration="10401000" />
-      <workItem from="1467138757737" duration="10282000" />
+      <workItem from="1467138757737" duration="10861000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176689000" />
+    <option name="totallyTimeSpent" value="177268000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />

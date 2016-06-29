@@ -1,4 +1,5 @@
 var Snake = Snake || {};
+
 window.gameLoop = function()
 {
     Snake.move();

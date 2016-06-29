@@ -1,5 +1,18 @@
 var Snake = Snake || {};
 
+Snake.nickSubmit = function()
+{
+    document.getElementById("game-submit").addEventListener("click", function()
+    {
+        var nicName = document.getElementById("nic_name").value;
+
+        if (nicName.trim().length != 0)
+        {
+            Snake.scoreInsert(nicName);
+        }
+    });
+}
+
 Snake.scoreCheck = function()
 {
     $.ajax(
@@ -35,9 +48,6 @@ Snake.scoreInsert = function(nicName)
         {
             for (var i = 0; i < data.length; i++)
             {
-                console.log(data[i].score);
-                console.log(data[i].nic_name);
-
                 tableResults = tableResults + '<span class="odd">' + data[i].nic_name + '</span>';
                 tableResults = tableResults + '<span class="even">' + data[i].score + '</span>';
             }

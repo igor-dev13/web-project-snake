@@ -1,16 +1,16 @@
 <?php
 require_once 'include/database.inc.php';
 
-$gameOption = $_POST['option'];
-
-if (isset($gameOption))
+if (isset($_POST['option']))
 {
-    if ($gameOption == 'check')
+    $gameOption = $_POST['option'];
+
+    if ($gameOption == 'checkLevel')
     {
         printOptionStatus('level_change');
     }
 
-    if ($gameOption == 'change')
+    if ($gameOption == 'changeLevel')
     {
         setOptionLevelStatus('level_change');
     }

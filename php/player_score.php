@@ -3,9 +3,11 @@
 
     if (isset($_POST['score']))
     {
-        if ((getRecordsCount() > 10) || ($_POST['score'] == 0))
+        $playerScore = $_POST['score'];
+
+        if ((getRecordsCount() > 10) || ($playerScore == 0))
         {
-            if (compareScoreInRecords($_POST['score']))
+            if (compareScoreInRecords($playerScore))
             {
                 echo 'new-score';
             }

@@ -109,7 +109,7 @@ Snake.createFood = function ()
 
 Snake.createBonus = function (frequency)
 {
-    var frequencyTime = (Snake.commonDividendBonusTime / frequency);
+    var frequencyTime = (Snake.dividendBonusTime / frequency);
     setInterval(bonusCreation, frequencyTime);
 
     function bonusCreation()
@@ -125,7 +125,7 @@ Snake.createBonus = function (frequency)
 
 Snake.createAntiBonus = function (frequency)
 {
-    var frequencyTime = (Snake.commonDividendBonusTime / frequency);
+    var frequencyTime = (Snake.dividendBonusTime / frequency);
     setInterval(antiBonusCreation, frequencyTime);
 
     function antiBonusCreation()

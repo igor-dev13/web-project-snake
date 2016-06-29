@@ -26,19 +26,6 @@ Snake.menuInit = function ()
     });
 }
 
-Snake.nickSubmit = function()
-{
-    document.getElementById("game-submit").addEventListener("click", function()
-    {
-        var nicName = document.getElementById("nic_name").value;
-
-        if (nicName.trim().length != 0)
-        {
-            Snake.scoreInsert(nicName);
-        }
-    });
-}
-
 Snake.mapAnimate = function ()
 {
     document.getElementById('game-screen').style.height = "600";
@@ -69,7 +56,7 @@ Snake.gameOptions = function ()
     gameOptions.appendChild(optionHide);
     gameOptions.appendChild(optionLevel);
     gameOptions.appendChild(optionBack);
-    Snake.optionLevel('check');
+    Snake.optionLevel('checkLevel');
     Snake.optionBonus('checkBonus');
     Snake.optionHide('checkOptionHide');
 
@@ -80,7 +67,7 @@ Snake.gameOptions = function ()
 
     optionLevel.addEventListener("click", function()
     {
-        Snake.optionLevel('change');
+        Snake.optionLevel('changeLevel');
     });
 
     optionBonus.addEventListener("click", function()
@@ -107,12 +94,12 @@ Snake.optionLevel = function (action)
             if (data == '1')
             {
                 $('#option-level').html("Переключение уровней <span class='color-green'>включено</span>");
-                Snake.levelsAreActive = true;
+                Snake.levelOption = true;
             }
             else
             {
                 $('#option-level').html("Переключение уровней <span class='color-red'>выключено</span>");
-                Snake.levelsAreActive = false;
+                Snake.levelOption = false;
             }
         },
         error: function() {

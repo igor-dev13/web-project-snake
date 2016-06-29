@@ -4,7 +4,7 @@ Snake.delay = function ()
 {
     window.setTimeout(function ()
     {
-        if (Snake.speedBonus === undefined || Snake.antiBonusHide === undefined || Snake.levelsAreActive === undefined)
+        if (Snake.speedBonus === undefined || Snake.antiBonusHide === undefined || Snake.levelOption === undefined)
         {
             window.setTimeout(Snake.delay(), 10);
         }
@@ -18,7 +18,7 @@ Snake.delay = function ()
     }, 0);
 }
 
-Snake.delay();
+Snake.delay(); // Точка входа
 
 Snake.init = function (canvas, level, loadingCompleteCallback)
 {
@@ -50,10 +50,10 @@ Snake.move = function ()
     var lastPointX = Snake.snake[last].x;
     var lastPointY = Snake.snake[last].y;
 
-    // движение змейки
+    // движение тела змейки
     for (var i = Snake.snake.length - 1; i > 0; i-- )
     {
-        Snake.setPositionRedraw(Snake.snake[i].x, Snake.snake[i].y); // чтобы старые точки змейки затерались
+        Snake.setPositionRedraw(Snake.snake[i].x, Snake.snake[i].y);
         Snake.snake[i].x = Snake.snake[i - 1].x;
         Snake.snake[i].y = Snake.snake[i - 1].y;
 
@@ -99,11 +99,11 @@ Snake.checkCollisions = function()
     if (Snake.snake[0].x == Snake.food.x && Snake.snake[0].y == Snake.food.y)
     {
         Snake.score++;
-        Snake.grow = 1;
+        Snake.grow = Snake.growOncollisionWithFood;
 
         if (Snake.score % Snake.levelUpCount == 0)
         {
-            if (Snake.levelsAreActive)
+            if (Snake.levelOption)
             {
                 if (Snake.bonus)
                 {
@@ -120,7 +120,7 @@ Snake.checkCollisions = function()
                 }
 
                 Snake.snake = [];
-                Snake.speed -= Snake.accelerateOnNewLevelSpeed;
+                Snake.speed -= Snake.newLevelUpSpeed;
                 Snake.grid = [];
                 Snake.moveX = 0;
                 Snake.moveY = 0;
@@ -154,14 +154,13 @@ Snake.checkCollisions = function()
     {
         if (Snake.snake[0].x == Snake.antiBonus.x && Snake.snake[0].y == Snake.antiBonus.y)
         {
-            var frequencyTime = (Snake.commonDividendBonusTime / Snake.antiBonus);
+            var frequencyTime = (Snake.dividendBonusTime / Snake.antiBonus);
             window.setTimeout(Snake.hiding, frequencyTime);
             Snake.antiBonus.x = '-1';
             Snake.antiBonus.y = '-1';
         }
     }
 
-    // проверям на столкновение со стеной
     if (Snake.getTypeFromPosition(Snake.snake[0].x, Snake.snake[0].y) == Snake.gridTypes.WALL)
     {
         Snake.gameOver = true;

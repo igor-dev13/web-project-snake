@@ -14,6 +14,7 @@ Snake.delay = function ()
             Snake.init('game-screen', 0, window.gameLoop);
             Snake.nickSubmit();
             document.getElementById('game-options').style.opacity = '1';
+            document.getElementsByTagName('h1')[0].style.opacity = '1';
         }
     }, 0);
 }
@@ -89,6 +90,11 @@ Snake.move = function ()
         Snake.grow--;
     }
 
+    if (document.getElementsByTagName('h1')[0].innerHTML == "LEVEL UP!")
+    {
+        Snake.newLvlAlert("Snake game");
+    }
+
     Snake.checkCollisions();
 }
 
@@ -109,14 +115,12 @@ Snake.checkCollisions = function()
                 {
                     Snake.bonus.x = '-1';
                     Snake.bonus.y = '-1';
-                    Snake.createBonus();
                 }
 
                 if (Snake.antiBonus)
                 {
                     Snake.antiBonus.x = '-1';
                     Snake.antiBonus.y = '-1';
-                    Snake.createAntiBonus();
                 }
 
                 Snake.snake = [];
@@ -125,6 +129,8 @@ Snake.checkCollisions = function()
                 Snake.moveX = 0;
                 Snake.moveY = 0;
                 Snake.grow = 0;
+                document.getElementsByTagName('h1')[0].style.opacity = '0';
+                Snake.newLvlAlert("LEVEL UP!");
                 Snake.level++;
                 Snake.loadGrid(Snake.level);
             }
@@ -198,6 +204,15 @@ Snake.checkCollisions = function()
             Snake.gameOver = true;
         }
     }
+}
+
+Snake.newLvlAlert = function (text)
+{
+    setTimeout(function ()
+    {
+        document.getElementsByTagName('h1')[0].innerHTML = text;
+        document.getElementsByTagName('h1')[0].style.opacity = '1';
+    }, 500);
 }
 
 Snake.hiding = function()

@@ -1,3 +1,12 @@
+html, body
+{
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
 body
 {
     background-color: #f1f1f1;
@@ -9,13 +18,27 @@ a
     color: #466991;
 }
 
+h1
+{
+    margin: 0 auto;
+    text-align: center;
+    color: #ff0a13;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
 .wrapper
 {
     width: 1000px;
-    height: 1000px;
     margin: 0 auto;
     position: relative;
     color: #466991;
+    min-height: 100%;
+    font-family: 'Lobster', cursive;
 }
 
 #game-screen
@@ -34,7 +57,6 @@ a
     width: 800px;
     margin: 20px auto;
     text-align: center;
-    font-family: 'Lobster', cursive;
     font-size: 24px;
     color: #466991;
     display: none;
@@ -42,13 +64,11 @@ a
 
 input
 {
-    font-family: 'Lobster', cursive;
     font-size: 24px;
 }
 
 .results
 {
-    font-family: 'Lobster', cursive;
     font-size: 24px;
     color: #466991;
     text-align: center;
@@ -107,8 +127,6 @@ input
     margin-top: -110px;
     margin-left: -330px;
     position: absolute;
-    zoom: 1;
-    filter: alpha(opacity=0);
     -webkit-transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;
     -ms-transition: opacity 0.5s ease-in-out;
@@ -122,7 +140,6 @@ input
     margin: 20px auto;
     cursor: pointer;
     width: 100%;
-    font-family: 'Lobster', cursive;
     font-size: 24px;
     font-weight: bold;
     zoom: 1;

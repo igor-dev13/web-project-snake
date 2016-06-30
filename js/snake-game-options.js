@@ -28,7 +28,7 @@ Snake.menuInit = function ()
 
 Snake.mapAnimate = function ()
 {
-    document.getElementById('game-screen').style.height = "600";
+    document.getElementById('game-screen').style.height = "600px";
     document.getElementById('game-screen').style.display = "block";
     document.getElementById('game-options').style.display = "none";
 }
